@@ -181,7 +181,7 @@ export default function App() {
 
       <Polaroid p={video} cls="vid" onMove={move} onFront={front}>
         <div className="ph" style={{ height: video.h - 60, background: "#0d0d12" }}>
-          <img src={`${BASE}photos/photo2.jpg`} alt="memory" draggable={false} />
+          <img src="https://prathamgangawane53-byte.github.io/Birthday-Wish/photos/photo1.jpg" alt="Memory`" draggable={false} />
           <span className="hint">Enjoy Your Special Day</span>
         </div>
         <div className="cap" onDoubleClick={() => { const n = prompt("Handle", handle); if (n) setHandle(n); }}>

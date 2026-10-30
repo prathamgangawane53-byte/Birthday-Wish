@@ -9,20 +9,24 @@ const GRADS = [
   "linear-gradient(135deg,#667eea,#764ba2)", "linear-gradient(135deg,#f093fb,#f5576c)",
 ];
 const EMOJI = ["🎤", "🌿", "🎧", "📸", "🌅", "🎸", "💃", "✨"];
+
+// "/Birthday-Wish/" on GitHub Pages, "/" in local dev
+const BASE = import.meta.env.BASE_URL;
+
 /* ====== EDIT THESE ====== */
-const VIDEO_SRC = "";            // e.g. "/my-video.mp4" (file inside /public) or a full URL
-const TOP_PHOTO = "/photos/photo3.jpg";   // photo on the top "I love you" card
-const TOP_POS = "50% 40%";                // which part of the photo to show (x y)
+const VIDEO_SRC = "";            // e.g. `${BASE}my-video.mp4` (file inside /public) or a full URL
+const TOP_PHOTO = `${BASE}photos/photo3.jpg`;   // photo on the top "I love you" card
+const TOP_POS = "50% 40%";                       // which part of the photo to show (x y)
 // Photos for the 8 background polaroids (files live in /public/photos)
 const PHOTOS = [
-  { src: "/photos/photo1.jpg", pos: "50% 22%" },
-  { src: "/photos/photo2.jpg", pos: "70% 40%" },
-  { src: "/photos/photo4.jpg", pos: "50% 25%" },
-  { src: "/photos/photo5.jpg", pos: "55% 22%" },
-  { src: "/photos/photo6.jpg", pos: "50% 30%" },
-  { src: "/photos/photo7.jpg", pos: "50% 30%" },
-  { src: "/photos/photo8.jpg", pos: "55% 35%" },
-  { src: "/photos/photo9.jpg", pos: "50% 55%" },
+  { src: `${BASE}photos/photo1.jpg`, pos: "50% 22%" },
+  { src: `${BASE}photos/photo2.jpg`, pos: "70% 40%" },
+  { src: `${BASE}photos/photo4.jpg`, pos: "50% 25%" },
+  { src: `${BASE}photos/photo5.jpg`, pos: "55% 22%" },
+  { src: `${BASE}photos/photo6.jpg`, pos: "50% 30%" },
+  { src: `${BASE}photos/photo7.jpg`, pos: "50% 30%" },
+  { src: `${BASE}photos/photo8.jpg`, pos: "55% 35%" },
+  { src: `${BASE}photos/photo9.jpg`, pos: "50% 55%" },
 ];
 const BIRTHDAY_TITLE = "Happy Birthday Khushi!";
 const HANDLE = "pratham_gangawane_2056";
@@ -177,8 +181,8 @@ export default function App() {
 
       <Polaroid p={video} cls="vid" onMove={move} onFront={front}>
         <div className="ph" style={{ height: video.h - 60, background: "#0d0d12" }}>
-         <img src="/photos/photo2.jpg" alt="memery"/> 
-            <span className="hint">Enjoy Your Special Day</span>
+          <img src={`${BASE}photos/photo2.jpg`} alt="memory" draggable={false} />
+          <span className="hint">Enjoy Your Special Day</span>
         </div>
         <div className="cap" onDoubleClick={() => { const n = prompt("Handle", handle); if (n) setHandle(n); }}>
           <span>{handle}</span><span style={{ fontSize: 16 }}>⌨️ 🐦</span>
